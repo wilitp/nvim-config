@@ -45,7 +45,14 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
+local fzf = Terminal:new({ cmd = "fzf", hidden = true })
+
+function _FZF()
+	fzf:toggle()
+end
+
 local node = Terminal:new({ cmd = "node", hidden = true })
+
 
 function _NODE_TOGGLE()
 	node:toggle()
