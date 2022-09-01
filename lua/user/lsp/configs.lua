@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "pyright", "ccls", "gopls" }
+local servers = { "jsonls", "sumneko_lua", "tsserver", "pyright", "ccls", "gopls", "elixirls", "emmet_ls" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -22,3 +22,7 @@ for _, server in pairs(servers) do
 	end
 	lspconfig[server].setup(opts)
 end
+
+lspconfig.emmet_ls.setup({
+    filetypes = { "html", "css", "typescriptreact", "javascriptreact" },
+})
