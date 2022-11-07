@@ -20,9 +20,17 @@ for _, server in pairs(servers) do
 	if has_custom_opts then
 		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 	end
+
+  -- do this here instead of after the for loop for some reason
+  -- ccls breaks otherwise, unlike emmet_ls
+  if server == "ccls" then
+    opts.filetypes = {"c", "cpp"}
+  
+  end
 	lspconfig[server].setup(opts)
 end
 
+
 lspconfig.emmet_ls.setup({
-    filetypes = { "html", "css", "typescriptreact", "javascriptreact" },
+    filetypes = { "html", "htmldjango", "css", "typescriptreact", "javascriptreact" },
 })
