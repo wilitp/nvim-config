@@ -82,6 +82,8 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig", commit = "51775b12cfbf1b6462c7b13cd020cc09e6767aea" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+  use ({'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'})
+  use { "mfussenegger/nvim-jdtls", ft = { "java" }}
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
